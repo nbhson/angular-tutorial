@@ -1,0 +1,48 @@
+<app-card>
+  <div class="title">To way binding</div>
+  <form action="">
+    <div>
+      <!-- NAME -->
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input
+          [(ngModel)]="name"
+          type="text"
+          matInput
+          name="name"
+          autocomplete="off"
+        />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <!-- AGE -->
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Age</mat-label>
+        <input
+          [(ngModel)]="age"
+          type="number"
+          matInput
+          name="age"
+          autocomplete="off"
+        />
+      </mat-form-field>
+    </div>
+    <div>
+      <!-- FOOD -->
+      <mat-form-field appearance="outline">
+        <mat-label>Favorite food</mat-label>
+        <mat-select [(ngModel)]="food" name="food">
+          <mat-option
+            *ngFor="let food of ['orange', 'banana', 'vegetable']"
+            [value]="food"
+          >
+            {{ food }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <h3>Output: {{ name }} - {{ age }} - {{ food }}</h3>
+  </form>
+</app-card>

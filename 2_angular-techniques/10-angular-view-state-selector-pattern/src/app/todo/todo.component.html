@@ -1,0 +1,40 @@
+<view-container
+  class="view-container"
+  *ngIf="view$ | async as view"
+  [appViewMain]="mainTmp"
+  [errorTmp]="errorTmp"
+  [loaderTmp]="loaderTmp"
+  [view]="view"
+>
+</view-container>
+
+<ng-template #loaderTmp>
+  <div class="loader">Loading...</div>
+</ng-template>
+
+<ng-template #mainTmp let-model="view">
+  <div class="mainView">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">UserId</th>
+          <th scope="col">Completed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of model.data">
+          <th scope="row">{{ todo.id }}</th>
+          <td>{{ todo.title }}</td>
+          <td>{{ todo.userId }}</td>
+          <td>{{ todo.completed }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>
+
+<ng-template #errorTmp let-error="view">
+  <div class="error">Error: {{ error.error.message }}</div>
+</ng-template>

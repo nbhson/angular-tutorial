@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app-module">
+
+<head>
+  <base href="/" />
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+  <script type="module" src="./app.js"></script>
+</head>
+
+<body>
+  <div ng-app="Subjects" ng-controller="app-controller">
+
+    <!-- ng-init -->
+    <div ng-init="sort=['quick sort', 'merge sort', 
+    'bubble sort']">{{sort[0]}}</div>
+
+    <!-- ng-controler -->
+    <div>
+      Name: <input class="form-control" type="text" ng-model="name">
+      You entered: <b><span>{{name}}</span></b>
+    </div>
+
+    <!-- ng-repeat -->
+    <ul>
+      <li ng-repeat="name in names">
+        {{name}}
+      </li>
+    </ul>
+
+    <!-- ng-show -->
+    <p ng-show="false" style="background: green; color: white; 
+    font-size: 14px; width:35%; padding: 10px;">
+      Show this paragraph using ng-show
+    </p>
+
+    <!-- ng-if -->
+    <div ng-if="false">
+      GeeksforGeeks is the computer
+      science portal for geeks.
+    </div>
+
+    <!-- ng-hide -->
+    <div ng-hide="true">
+      GeeksforGeeks is the computer
+      science portal for geeks.
+    </div>
+
+    <!-- ng-disabled -->
+    <button ng-disabled="true">
+      Click to Disable
+    </button>
+
+    <!-- ng-click -->
+    <button ng-click="alert()">
+      Click Here
+    </button>
+  </div>
+
+  </div>
+</body>
+
+</html>

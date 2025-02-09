@@ -1,0 +1,27 @@
+<app-card>
+  <div class="title">Event</div>
+
+  <div>
+    <button mat-raised-button (click)="clickEvent($event)">Click me!</button>
+  </div>
+
+
+  <div>
+    <h3>Click event: {{number}}</h3>
+    <button mat-raised-button (click)="summation()">Tăng 1</button>
+  </div>
+
+
+  <h3>Keyup event: {{valueKeyup}}</h3>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Favorite food</mat-label>
+    <input (keyup)="KeyupEvent($event)" matInput placeholder="Ex. Pizza">
+  </mat-form-field>
+
+  <h3>Enter event: {{valueEnter}}</h3>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Favorite food</mat-label>
+    <input (keyup.enter)="EnterEvent($event)" matInput placeholder="Ex. Pizza">
+  </mat-form-field>
+
+</app-card>

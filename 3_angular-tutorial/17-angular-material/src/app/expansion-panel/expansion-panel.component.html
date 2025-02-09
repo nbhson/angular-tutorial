@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-title>Expansion Panel</mat-card-title>
+    <mat-card-subtitle>
+        mat-accordion để tạo padding giữa các expansion-panel khi mở ra <br>
+        và chỉ mở được 1 expansion-panel trong mat-mat-accordion, nếu muốn mở nhiều expansion-panel thì sử dụng multi="true" <br>
+        hideToggle để ẩn menu bên trái 
+    </mat-card-subtitle>
+    <mat-card-content>
+
+        <mat-accordion multi="true" hideToggle>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Angular
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Total: 3 time
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis eum officiis optio esse iste minima libero harum, culpa doloremque est obcaecati aspernatur unde quidem odio. Maiores aperiam doloremque labore eos!</p>
+                <mat-action-row>
+                    <button mat-raised-button>Enroll</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Vue
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        Total: 2 time
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis eum officiis optio esse iste minima libero harum, culpa doloremque est obcaecati aspernatur unde quidem odio. Maiores aperiam doloremque labore eos!</p>
+                <mat-action-row>
+                    <button mat-raised-button>Enroll</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </mat-card-content>
+</mat-card>

@@ -1,0 +1,21 @@
+<div class="mt-3">
+  <h2>Set {{ quantity() }}</h2>
+  <select
+    [ngModel]="quantity()"
+    (change)="onQuantityChanges($any($event.target).value)"
+    class="form-control w-50"
+  >
+    <option *ngFor="let item of qtyAvailable()">{{ item }}</option>
+  </select>
+  <button class="btn btn-secondary" (click)="addQuantity()">Add Quantity</button>
+</div>
+
+<hr>
+
+<div>Vehicle: {{ selectedVehicle().name}}</div>
+<div>Price: {{ selectedVehicle().price }}</div>
+<div style="font-weight: bold" [style.color]="color()">Total: {{ exPrice()  }}</div>
+<!--<div *ngFor="let v of vehicles()">
+  {{ v.name }}
+</div> -->
+

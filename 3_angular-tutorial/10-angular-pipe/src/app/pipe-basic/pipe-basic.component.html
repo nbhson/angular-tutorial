@@ -1,0 +1,87 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Tên Pipe</th>
+      <th>Dữ Liệu Đầu Vào</th>
+      <th>Kết Quả</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>UpperCase</td>
+      <td>{{ content_1 }}</td>
+      <td>{{ content_1 | uppercase }}</td>
+    </tr>
+
+    <tr>
+      <td>2</td>
+      <td>LowerCase</td>
+      <td>{{ content_1 }}</td>
+      <td>{{ content_1 | lowercase }}</td>
+    </tr>
+
+    <tr>
+      <td>3</td>
+      <td>TitleCase</td>
+      <td>{{ content_1 }}</td>
+      <td>{{ content_1 | titlecase }}</td>
+    </tr>
+
+    <tr>
+      <td>4</td>
+      <td>Slice</td>
+      <td>{{ content_2 }}</td>
+      <td>{{ content_2 | slice :4:11 }}</td>
+    </tr>
+
+    <tr>
+      <td>5</td>
+      <td>Slice</td>
+      <td>{{ content_3 }}</td>
+      <td>{{ content_3 | slice :2:3 }}</td>
+    </tr>
+
+    <tr>
+      <td>6</td>
+      <td>Number</td>
+      <td>{{ content_4 }}</td>
+      <td>{{ content_4 | number:'5.0-5' }}</td>
+      <!-- <td>{{ content_4 | number:'5.5-5' }}</td> -->
+      <!-- <td>{{ content_4 | number:'5.1-2' }}</td> -->
+    </tr>
+
+    <tr>
+      <td>7</td>
+      <td>Percent</td>
+      <td>{{ content_5 }}</td>
+      <td>{{ content_5 | percent:'1.0-3' }}</td>
+      <!-- <td>{{ content_5 | percent:'5.0-5' }}</td> -->
+      <!-- <td>{{ content_5 | percent:'5.4-5' }}</td> -->
+    </tr>
+
+    <tr>
+      <td>8</td>
+      <td>Currency</td>
+      <td>{{ content_4 }}</td>
+      <td>{{ content_4 | currency :'VND':false:'1.0-2' }}</td>
+    </tr>
+
+    <tr>
+      <td>9</td>
+      <td>Date</td>
+      <td>{{ content_6 }}</td>
+      <td>{{ content_6 | date :'dd/MM/yyyy hh:mm:ss' }}</td>
+      <!-- <td>{{ content_6 | date :'dd/MM/yyyy hh:mm:ss a' }}</td> -->
+      <!-- <td>{{ content_6 | date :'dd/MM/yyyy HH:mm:ss' }}</td> -->
+    </tr>
+
+    <tr>
+      <td>9</td>
+      <td>Date</td>
+      <td>{{ content_7 }}</td>
+      <td>{{ content_7 | json }}</td>
+    </tr>
+  </tbody>
+</table>

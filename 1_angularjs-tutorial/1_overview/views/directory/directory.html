@@ -1,0 +1,189 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="1">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse1"
+        aria-expanded="true"
+        aria-controls="collapse1"
+      >
+        #1 two ways binding
+      </button>
+    </h2>
+    <div
+      id="collapse1"
+      class="accordion-collapse collapse show"
+      aria-labelledby="1"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        <div class="row">
+          <input
+            class="form-control mb-3"
+            type="number"
+            ng-model="inputNumber"
+            min="1"
+            placeholder="Enter your number"
+          />
+          <div class="col-6 d-flex justify-content-center align-items-center">
+            <button type="button" class="btn btn-primary">
+              Your number is:
+              <span class="badge text-bg-secondary">{{inputNumber}}</span>
+            </button>
+          </div>
+          <div class="col-6 d-flex justify-content-center align-items-center">
+            <span class="badge text-bg-warning">Number</span> +
+            <span class="badge text-bg-warning">Number</span> =
+            <span class="badge text-bg-danger"
+              >{{inputNumber + inputNumber}}</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="2">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse2"
+        aria-expanded="false"
+        aria-controls="collapse2"
+      >
+        #2 ng-init
+      </button>
+    </h2>
+    <div
+      id="collapse2"
+      class="accordion-collapse collapse"
+      aria-labelledby="2"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        <div>
+          <p ng-init="numbers=[1,2,3,4]">Numbers[2]: {{numbers[2]}}</p>
+          <p ng-init="color='orange'" class="{{color}}">Text orange</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="3">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse3"
+        aria-expanded="false"
+        aria-controls="collapse3"
+      >
+        #3 ng-repeat
+      </button>
+    </h2>
+    <div
+      id="collapse3"
+      class="accordion-collapse collapse"
+      aria-labelledby="3"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        <ul>
+          <li ng-repeat="ninja in ninja">{{ninja}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="4">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse4"
+        aria-expanded="false"
+        aria-controls="collapse4"
+      >
+        #4 ng-controller
+      </button>
+    </h2>
+    <div
+      id="collapse4"
+      class="accordion-collapse collapse"
+      aria-labelledby="4"
+      data-bs-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        <div ng-controller="mainController">{{message}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="5">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+      >
+        #5 fillter/ng-src/ng-submit
+      </button>
+    </h2>
+    <div
+      id="collapse5"
+      class="accordion-collapse collapse"
+      aria-labelledby="5"
+      data-bs-parent="#accordionExample"
+    >
+      <div ng-controller="mainController" class="container-sm">
+        <input
+          type="text"
+          ng-model="search"
+          class="form-control mt-3 mb-3"
+          placeholder="Search..."
+        />
+        <ul id="ninja-list">
+          <li ng-repeat="ninja in ninja | orderBy: '-name' | filter: search">
+            <img ng-src="{{ninja.img}}" alt="" style="width: 25px" />
+            {{ninja.name}} - {{ninja.rate | currency: '₫' : 3 }}
+          </li>
+        </ul>
+        <form ng-submit="addNinja()">
+          <input
+            class="form-control mb-3"
+            type="text"
+            placeholder="Name"
+            ng-model="newNinja.name"
+          />
+          <input
+            class="form-control mb-3"
+            type="text"
+            placeholder="Age"
+            ng-model="newNinja.age"
+          />
+          <input
+            class="form-control mb-3"
+            type="text"
+            placeholder="Rate"
+            ng-model="newNinja.rate"
+          />
+          <div class="row">
+            <div class="col-6 d-flex justify-content-center align-items-center">
+              <input class="btn btn-success mb-3" type="submit" value="Add ninja" />
+            </div>
+            <div class="col-6 d-flex justify-content-center align-items-center">
+              <button class="btn btn-danger mb-3" ng-click="removeAll()">
+                Remove all
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

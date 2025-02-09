@@ -1,0 +1,29 @@
+<app-card>
+  <div class="title">Structural Directive - *ngIf</div>
+  <h3 *ngIf="isShow">Son Nguyen</h3>
+
+  <button
+  style="margin-bottom: 16px"
+  mat-raised-button (click)="toggle()"
+  >
+    Toggle
+  </button>
+
+  <mat-divider></mat-divider>
+
+
+  <div style="padding: 16px">
+    <ng-template *ngIf="radioValue; else elseBlock">
+      <h3 >Nam</h3>
+    </ng-template >
+    <ng-template #elseBlock>
+      <h3>Nữ</h3>
+    </ng-template>
+
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="true" (click)="radioChange(true)">Nam</mat-radio-button>
+      <mat-radio-button value="false" (click)="radioChange(false)">Nữ</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+</app-card>

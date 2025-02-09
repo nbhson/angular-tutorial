@@ -1,0 +1,18 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th (click)="sortCol('name')" class="active">Tên Sản Phẩm</th>
+      <th (click)="sortCol('price')" class="active">Giá</th>
+      <th>Có Sẵn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products | sortString :name:sortBy">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.prices | currency: "VND":true }}</td>
+      <td>{{ product.status ? "Active" : "Deactive" }}</td>
+    </tr>
+  </tbody>
+</table>

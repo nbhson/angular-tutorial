@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app-module">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="./app.js"></script>
+  <head>
+    <title>AngularJS Introduction</title>
+  </head>
+  <body style="text-align: center" ng-controller="app-controller">
+    <div>
+      <h1>$scope</h1>
+      <h3 style="color: green">{{organization}}</h3>
+      <p>A Computer Science Portal</p>
+    </div>
+
+    <div>
+      <h1>$rootScope</h1>
+
+      <p>Jack and Jones</p>
+      <h3>{{relation}}</h3>
+
+      <div ng-controller="control">
+        <p>Akbar and Antony</p>
+        <h3>{{relation}}</h3>
+      </div>
+
+      <p>Jay and Viru</p>
+      <h3>{{relation}}</h3>
+    </div>
+  </body>
+</html>

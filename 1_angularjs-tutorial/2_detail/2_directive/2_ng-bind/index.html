@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app-module">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+
+  <body ng-controller="app-controller">
+    <!-- ng-bind -->
+    num1: <input type="number" ng-model="num1" ng-change="product()" />
+    <br />
+    num2: <input type="number" ng-model="num2" ng-change="product()" />
+    <br />
+    <b>Product:</b> <span ng-bind="result"></span>
+
+    <!-- ng-bind-html -->
+    <p ng-bind-html="result"></p>
+
+    <!-- ng-bind-template -->
+    <div>
+      Choose one:<br />
+      <label
+        >Linear Search
+        <input
+          type="radio"
+          name="r1"
+          ng-model="search"
+          value="Linear Search"
+        /> </label
+      ><br />
+
+      <label
+        >Binary Search
+        <input
+          type="radio"
+          name="r1"
+          ng-model="search"
+          value="Binary Search"
+        /> </label
+      ><br />
+
+      <span ng-bind-template="{{msg}}: {{search}}"></span>
+      <br />
+    </div>
+  </body>
+</html>

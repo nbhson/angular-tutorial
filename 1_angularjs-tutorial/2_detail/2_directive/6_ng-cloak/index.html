@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app-module">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+
+  <body ng-controller="app-controller">
+    <body style = "text-align:center">
+      <h2 style = "color:green">GeeksForGeeks</h2>
+      <h2 style = "color:purple">AngularJS ng-cloak</h2>
+
+      <p ng-cloak>{{ 10 + 10 }}</p>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+<app-navbar></app-navbar>
+
+<div [@routeAnimations]="prepareRoute(outlet)" class="p-3">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

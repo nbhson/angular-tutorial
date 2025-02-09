@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-title>Date TimePicker</mat-card-title>
+    <mat-card-subtitle>
+        - startView: xác định nơi khi mở lên (year | multi-year)
+    </mat-card-subtitle>
+    <mat-card-content>
+        <mat-form-field>
+            <input type="text" matInput [matDatepicker]="myDateTime" [min]="minDate" [max]="maxDate">
+            <mat-datepicker-toggle matSuffix [for]="myDateTime"></mat-datepicker-toggle>
+            <mat-datepicker #myDateTime startView="year"></mat-datepicker>
+        </mat-form-field>
+    </mat-card-content>
+</mat-card>

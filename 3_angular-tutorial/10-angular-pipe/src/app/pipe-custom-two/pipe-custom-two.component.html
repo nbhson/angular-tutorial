@@ -1,0 +1,47 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th style="width: 25%">STT</th>
+      <th style="width: 25%">Tên Sản Phẩm</th>
+      <th style="width: 25%">Giá</th>
+      <th style="width: 25%">Có Sẵn</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>
+        <mat-form-field appearance="legacy" style="width: 100%;">
+          <mat-label>Filter ID</mat-label>
+          <input matInput autocomplete="off" [(ngModel)]="id">
+        </mat-form-field>
+      </th>
+      <th>
+        <mat-form-field appearance="legacy" style="width: 100%;">
+          <mat-label>Filter Name</mat-label>
+          <input matInput autocomplete="off" [(ngModel)]="name">
+        </mat-form-field>
+      </th>
+      <th>
+        <mat-form-field appearance="legacy" style="width: 100%;">
+          <mat-label>Filter Prices</mat-label>
+          <input matInput autocomplete="off" [(ngModel)]="prices">
+        </mat-form-field>
+      </th>
+      <th>
+        <mat-form-field appearance="legacy" style="width: 100%;">
+          <mat-label>Find status</mat-label>
+          <mat-select [(ngModel)]="status">
+            <mat-option value="true">Active</mat-option>
+            <mat-option value="false">Deactive</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </th>
+    </tr>
+    <tr *ngFor="let product of products | filterString :id:name:prices:status">
+      <td>{{ product.id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.prices | currency: "VND":true }}</td>
+      <td>{{ product.status ? "Active" : "Deactive" }}</td>
+    </tr>
+  </tbody>
+</table>

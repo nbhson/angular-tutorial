@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <img mat-card-image src="https://picsum.photos/200/300" alt="any">
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button type="button" (click)="loadMore.emit()">Load Next</button>
+  </mat-card-actions>
+</mat-card>

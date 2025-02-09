@@ -1,0 +1,18 @@
+<div class="container">
+  <legend>Update User</legend>
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label class="form-label">User Name</label>
+      <input type="text" [(ngModel)]="userForm.name" formControlName="name" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="text" [(ngModel)]="userForm.email" formControlName="email" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Phone</label>
+      <input type="text" [(ngModel)]="userForm.phone" formControlName="phone" class="form-control" />
+    </div>
+    <button type="button" class="btn btn-dark" (click)="udapte()">Edit</button>
+  </form>
+</div>

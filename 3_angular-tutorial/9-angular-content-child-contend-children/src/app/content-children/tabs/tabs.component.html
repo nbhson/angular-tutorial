@@ -1,0 +1,6 @@
+<div *ngFor="let tab of tabs" (click)="selectTab(tab)">
+  {{ tab.title }}
+</div>
+
+<!-- <app-tab> dòng 14 15 16 -->
+<ng-content></ng-content>

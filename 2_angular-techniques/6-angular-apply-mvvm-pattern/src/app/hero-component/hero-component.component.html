@@ -1,0 +1,2 @@
+<h1 *ngIf="model.canFly"  (click)="model.canFly = false"> He is {{model.name}} and he can fly</h1>
+<h1 *ngIf="!model.canFly" (click)="model.canFly = true"> He is {{model.name}} and he can't fly</h1>

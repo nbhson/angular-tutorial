@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="app-module">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="./app.js"></script>
+  <script src="./controller.js"></script>
+  <script src="./directive.js"></script>
+  <head>
+    <title>AngularJS Introduction</title>
+  </head>
+  <body style="text-align: center">
+    <div style="margin-bottom: 16px;">
+      <div ng-controller="app-controller">{{message}}</div>
+    </div>
+
+    <div ng-controller="app-controller">
+      Vowels List :
+
+      <button ng-click="ch('I')">I</button>
+      <button ng-click="ch('L')">L</button>
+      <button ng-click="ch('O')">O</button>
+      <button ng-click="ch('V')">V</button>
+      <button ng-click="ch('E')">E</button>
+      <button ng-click="ch('U')">U</button>
+
+      <p>{{ choice }}</p>
+
+      Vowels List :
+      <select  ng-options="option for option in list" 
+          ng-model="mychoice" ng-change="c()">
+      </select>
+        
+      <p>{{ choice }}</p>
+
+    </div>
+    <div app-directive></div>
+  </body>
+</html>

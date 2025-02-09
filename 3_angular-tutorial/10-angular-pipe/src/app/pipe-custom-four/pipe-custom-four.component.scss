@@ -1,0 +1,14 @@
+table {
+  background-color: white;
+  text-align: justify;
+  width: 100%;
+}
+
+table tr th,
+table tr td {
+  padding: 8px;
+}
+
+th.active {
+  cursor: pointer;
+}

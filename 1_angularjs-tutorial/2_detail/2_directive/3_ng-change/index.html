@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app-module">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+
+  <body ng-controller="app-controller">
+    <h1 style="color: green">GeeksforGeeks</h1>
+    <h2>ng-change Directive</h2>
+    <div>
+      Check to show/hide details
+      <input type="checkbox" ng-change="show()" ng-model="check" /> <br /><br />
+      <div
+        style="padding: 10px; border: 1px solid black; width: 30%; color: green"
+        ng-show="result"
+      >
+        GeeksforGeeks is the computer science portal for geeks.
+      </div>
+    </div>
+  </body>
+</html>

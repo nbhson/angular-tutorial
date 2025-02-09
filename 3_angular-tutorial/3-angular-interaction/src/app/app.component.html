@@ -1,0 +1,20 @@
+<app-child-one
+  [name]="name"
+  [age]="age"
+  [major]="major"
+  [married]="married"
+></app-child-one>
+
+<app-child-two
+  [users]="users"
+></app-child-two>
+
+<app-child-three
+  [movieName]="movieName"
+  [movieTime]="movieTime"
+></app-child-three>
+
+
+<app-child-four
+ (myUser)="addUser($event)"
+></app-child-four>

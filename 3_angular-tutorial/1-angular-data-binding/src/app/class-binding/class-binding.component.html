@@ -1,0 +1,21 @@
+<app-card>
+  <div class="title">Class</div>
+  <button
+    mat-raised-button
+    [class.success]="colorButton === 1"
+    [class.danger]="colorButton !== 1"
+  >
+    Basic Button
+  </button>
+
+  <button
+    mat-raised-button
+    [ngClass]="{
+      'color-button': true,
+      'background-button': true,
+      'font-size-button': false
+    }"
+  >
+    Basic Button
+  </button>
+</app-card>

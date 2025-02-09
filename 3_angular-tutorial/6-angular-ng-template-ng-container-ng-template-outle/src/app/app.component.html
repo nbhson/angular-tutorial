@@ -1,0 +1,39 @@
+<!-- Sử dụng ngTemplateOutlet với ng-container -->
+<div class="card">
+  <div class="card-header">
+    You have selected
+    <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container>.
+  </div>
+  <div class="card-body">
+    There are <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container> was
+    selected.
+  </div>
+  <div class="card-footer">
+    You have selected
+    <ng-container [ngTemplateOutlet]="counterTmpl"></ng-container>.
+  </div>
+</div>
+
+<!-- VÍ DỤ 1 -->
+<!-- Sử dụng với components -->
+<app-child-one [template]="counterTmpl"></app-child-one>
+
+<!-- ng-template -->
+<ng-template #counterTmpl>
+  <span class="badge badge-primary">{{ counter }}</span> items
+</ng-template>
+
+
+<!-- VÍ DỤ 2 -->
+<!-- ngTemplateOutletContext -->
+<app-child-two [navs]="navs" [navLink]="navLink"></app-child-two>
+
+<!-- cho cách 1: item là biến từ ng-container ở app-child-two -->
+<!-- <ng-template #navLink let-l="item">
+  <h4>{{l}}</h4>
+</ng-template> -->
+
+<!-- cho cách 2: không cần dùng dấu = -->
+<ng-template #navLink let-l>
+  <h4>{{l}}</h4>
+</ng-template>

@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-title>CheckBox & Raido</mat-card-title>
+    <mat-card-content>
+        <div>
+            <mat-card-subtitle>CheckBox</mat-card-subtitle>
+            <section>
+                <mat-checkbox [(ngModel)]="checked">Checked</mat-checkbox>
+                <mat-checkbox [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
+            </section>
+        </div>
+
+        <div>
+            <mat-card-subtitle>Radio</mat-card-subtitle>
+            <mat-radio-group [(ngModel)]="favoriteSeason">
+                <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                    {{season}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <div>Your favorite season is: {{favoriteSeason}}</div>
+        </div>
+        
+    </mat-card-content>
+</mat-card>

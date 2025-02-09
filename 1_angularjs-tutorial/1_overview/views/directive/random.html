@@ -1,0 +1,13 @@
+<div class="card-header">
+  {{title}} 
+</div>
+<div class="card-body">
+  <h5 class="card-title" ng-transclude></h5>
+  <h6 class="card-subtitle mb-2 text-muted">{{description}}</h6>
+  <p>
+    <span class="badge text-bg-primary">Info</span> {{ninja[random]}}
+  </p>
+  <div class="text-center">
+    <button ng-click="next()" class="btn btn-danger">Who next?</butt>
+  </div>
+</div>

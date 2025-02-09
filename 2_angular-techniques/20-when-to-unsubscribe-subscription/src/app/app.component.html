@@ -1,0 +1,7 @@
+<button (click)="display = 'product'">Product</button>
+<button (click)="display = 'category'">Category</button>
+<button (click)="display = 'user'">User</button>
+
+<app-product *ngIf="display === 'product'"></app-product>
+<app-category *ngIf="display === 'category'"></app-category>
+<app-user *ngIf="display === 'user'"></app-user>

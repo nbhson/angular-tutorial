@@ -1,0 +1,20 @@
+<app-card>
+  <div class="title">Structural Directive - *ngFor</div>
+  <div>
+    <!-- ngFor -->
+    <ul style="list-style: circle">
+      <li *ngFor="let movie of movies; index as i; first as f; last as l">
+        <div>Title: {{ movie.title }}</div>
+        <div>Index: {{ i }}</div>
+        <div>First: {{ f }}</div>
+        <div>Last: {{ l }}</div>
+      </li>
+    </ul>
+
+    <!-- ngFor async -->
+    <div *ngFor="let user of users$ | async">
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.email }}</p>
+    </div>
+  </div>
+</app-card>

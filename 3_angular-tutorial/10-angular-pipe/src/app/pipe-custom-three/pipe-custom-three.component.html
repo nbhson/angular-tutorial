@@ -1,0 +1,20 @@
+<table border="1">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Dữ Liệu Đầu Vào</th>
+      <th>
+        Kết Quả
+        <button mat-raised-button (click)="handleValue(1)">Tăng</button>
+        <button mat-raised-button (click)="handleValue(-1)">Giảm</button>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <th>{{ arr }}</th>
+      <th>{{ arr | sortArray :value }}</th>
+    </tr>
+  </tbody>
+</table>

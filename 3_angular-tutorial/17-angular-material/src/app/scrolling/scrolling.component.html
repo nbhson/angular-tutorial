@@ -1,0 +1,10 @@
+<mat-card>
+    <mat-card-title>Scrolling</mat-card-title>
+    <mat-card-content>
+        <cdk-virtual-scroll-viewport itemSize="100" class="container">
+            <div *cdkVirtualFor="let number of numbers" class="number">
+                {{number}}
+            </div>
+        </cdk-virtual-scroll-viewport>
+    </mat-card-content>
+</mat-card>

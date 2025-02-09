@@ -1,0 +1,43 @@
+<!-- select -->
+<app-card>
+  <header>Title 1</header>
+  <div>
+    ng-content default 1
+  </div>
+  <div>
+    ng-content default 2
+  </div>
+  <div id="content1">
+    ng-content 1
+  </div>
+</app-card>
+
+<!-- select component-->
+<app-card>
+  <header>Title 2</header>
+  <div>
+    ng-content default 1
+  </div>
+  <div>
+    ng-content default 2
+  </div>
+  <div id="content2">
+    ng-content 2
+  </div>
+  <app-action></app-action>
+</app-card>
+
+<!-- ngProjectAs -->
+<app-card>
+  <header>Title 2</header>
+  <div>
+    ng-content default 1
+  </div>
+  <div>
+    ng-content default 2
+  </div>
+  <ng-container ngProjectAs="content3">
+    ng-content 3
+  </ng-container>
+  <app-action></app-action>
+</app-card>

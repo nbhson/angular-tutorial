@@ -1,0 +1,8 @@
+<app-card>
+  <div class="title">Interpolation</div>
+  <div>Họ tên: {{ user.name }}</div>
+  <div>Tuổi : {{ user.age }}</div>
+  <div>Hôn nhân: {{ user.isMarried ? "Đã kết hôn" : "Chưa kết hôn" }}</div>
+  <div>Nghề nghiệp: {{ showProfession() }}</div>
+  <div><a href="{{ user.profile }}">Google</a></div>
+</app-card>

@@ -1,0 +1,47 @@
+<div class="mt-3">
+  <h2>Signal Example #1</h2>
+  <button (click)="increment()" class="btn btn-secondary">
+    Increment Count
+  </button>
+  <button (click)="decrement()" class="btn btn-secondary">
+    Decrement Count
+  </button>
+  <p>Item: {{ signalCount() }}</p>
+  <p>Dependent Value: {{ signalCountDepend() }}</p>
+  <p>Dependent Value 2: {{ signalCountDepend2() }}</p>
+</div>
+
+<hr>
+
+<div class="mt-3">
+  <h2>Signal Example #2</h2>
+  <input type="text" (input)="onChange($event)" [value]="signalInput()">
+  <span style="color: red;">{{signalInputDepend()?.required}}</span>
+</div>
+
+<hr>
+
+<div class="mt-3">
+  <h2>Signal Example #3</h2>
+  <button (click)="changeObject()">Change</button>
+  {{signalObject().name}} + {{signalObject().age}} - 
+  {{signalObjectDepend().name}} + {{signalObjectDepend().age}}
+</div>
+
+<hr>
+
+<div class="mt-3">
+  <h2>Signal Example #4</h2>
+  <button (click)="addPost()">Add</button>
+
+  <ul>
+    <li *ngFor="let post of signalArray()">{{post.id}} - {{post.title}}</li>
+  </ul>
+</div>
+
+<div class="mt-3">
+  <h2>Signal Example #5</h2>
+  <button (click)="updateBoolean()">Show</button>
+  <!-- <div *ngIf="signalBoolean()">Show</div> -->
+  <div *ngIf="signalBoolean">Show</div>
+</div>

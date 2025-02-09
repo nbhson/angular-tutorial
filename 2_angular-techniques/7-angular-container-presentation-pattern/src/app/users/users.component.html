@@ -1,0 +1,26 @@
+<button class="btn btn-success" (click)="create()">Create</button>
+<div class="row">
+  <div class="col-md-8">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">User name</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <app-user-tile *ngFor="let user of users" [id]="user.id" [user]="user" (selectUser)="selectUser($event)"
+          [active]="selectedUser?.id === user.id">
+        </app-user-tile>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4">
+    <app-user-form *ngIf="selectedUser" [vm]="selectedUser" (save)="save($event)">
+    </app-user-form>
+  </div>
+
+</div>

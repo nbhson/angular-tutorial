@@ -1,0 +1,87 @@
+<app-card>
+  <div class="title">HTTP Client</div>
+  <div class="container">
+    <div class="row">
+      <!-- FORM ADD -->
+      <form action="" method="post" class="col-md-6">
+        <div class="form-group mb-3">
+          <label for="">ID</label>
+          <input type="number" class="form-control" [(ngModel)]="todo.id" [ngModelOptions]="{ standalone: true }" />
+        </div>
+        <div class="form-group mb-3">
+          <label for="">User ID</label>
+          <input type="number" class="form-control" [(ngModel)]="todo.userId" [ngModelOptions]="{ standalone: true }" />
+        </div>
+        <div class="form-group mb-3">
+          <label for="">Title</label>
+          <input type="text" class="form-control" [(ngModel)]="todo.title" [ngModelOptions]="{ standalone: true }" />
+        </div>
+        <div class="form-group mb-3">
+          <label for="">Handle</label>
+          <select class="form-control">
+            <option value="true">Completed</option>
+            <option value="false">Inprogress</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <button class="btn btn-success" (click)="addTodo()">ADD</button>
+        </div>
+      </form>
+
+      <!-- FORM UPDATE -->
+      <form action="" method="post" class="col-md-6">
+        <div class="form-group mb-3">
+          <label for="">ID</label>
+          <input type="number" class="form-control" [(ngModel)]="todo.id" [ngModelOptions]="{ standalone: true }" />
+        </div>
+        <div class="form-group mb-3">
+          <label for="">User ID</label>
+          <input type="number" class="form-control" [(ngModel)]="todo.userId" [ngModelOptions]="{ standalone: true }" />
+        </div>
+        <div class="form-group mb-3">
+          <label for="">Title</label>
+          <input type="text" class="form-control" [(ngModel)]="todo.title" [ngModelOptions]="{ standalone: true }" />
+        </div>
+        <div class="form-group mb-3">
+          <label for="">Handle</label>
+          <select class="form-control">
+            <option value="true">Completed</option>
+            <option value="false">Inprogress</option>
+          </select>
+        </div>
+        <div class="form-group mb-3">
+          <button class="btn btn-success" (click)="update()">UPDATE</button>
+        </div>
+      </form>
+
+      <!-- TABLE -->
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">User ID</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let todo of todos">
+            <td>{{ todo.id }}</td>
+            <th>{{ todo.userId }}</th>
+            <td>{{ todo.title }}</td>
+            <td>{{ todo.completed ? "Completed" : "Inprogress" }}</td>
+            <td>
+              <button class="btn btn-success" (click)="updateTodo(todo)">
+                Edit
+              </button>
+              <button class="btn btn-danger" (click)="deleteTodo(todo.id)">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</app-card>

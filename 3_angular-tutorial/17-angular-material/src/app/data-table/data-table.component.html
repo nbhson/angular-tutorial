@@ -1,0 +1,43 @@
+<p>
+    - matColumnDef: xác định cái cột, được chứa trong displayedColumns <br>
+    (matColumnDef="column-1" thì trong displayedColumns phải có thuộc tính column-1) <br>
+    - Muốn hiển thị hay ẩn cột nào có thể tùy chỉnh tại displayedColumns <br>
+</p>
+
+<mat-divider></mat-divider>
+
+<mat-form-field>
+    <input matInput type="text" placeholder="Filter" (keyup)="applyFilter($event.target.value)">
+</mat-form-field>
+
+<!-- matSort & mat-sort-header dùng để sort column table -->
+<mat-table [dataSource]="dataSource" class="mat-elevation-z1" matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+  <!-- Position Column -->
+  <ng-container matColumnDef="position-display">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name-display">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight-display">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol-display">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row (click)="logDataRow(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>

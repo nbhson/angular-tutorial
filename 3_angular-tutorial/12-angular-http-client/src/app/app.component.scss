@@ -1,0 +1,20 @@
+mat-drawer-container{
+    height: 100vh;
+  }
+  mat-drawer{
+    width: 250px;
+  }
+  div.sidenav-content{
+    background-color: #ccc;
+    height: 100vh;
+    overflow: scroll;
+  }
+  mat-toolbar {
+    background:#fff;
+    margin-bottom: 16px;
+  
+    mat-icon {
+      cursor: pointer;
+    }
+  }
+  

@@ -1,0 +1,19 @@
+<div class="container">
+  <legend>Add A New User</legend>
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label class="form-label">User Name</label>
+      <input type="text" [(ngModel)]="userForm.name" formControlName="name" autocomplete="off" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" [(ngModel)]="userForm.email" formControlName="email" autocomplete="off"
+        class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Phone</label>
+      <input type="text" [(ngModel)]="userForm.phone" formControlName="phone" autocomplete="off" class="form-control" />
+    </div>
+    <button type="button" class="btn btn-dark" (click)="save()">Create</button>
+  </form>
+</div>

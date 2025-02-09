@@ -1,0 +1,13 @@
+<app-card>
+  <div class="title">DOM Element</div>
+  <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Favorite food</mat-label>
+      <!-- #demoInput: là template variable (dấu #) -->
+      <input matInput #demoInput autocomplete="off">
+      <mat-hint>{{data}}</mat-hint>
+    </mat-form-field>
+    <!-- #demoButton: là template variable (dấu #) -->
+    <button #demoButton mat-raised-button (click)="getData()">Get data</button>
+  </div>
+</app-card>

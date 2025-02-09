@@ -1,0 +1,26 @@
+<app-card>
+  <div class="title">Login</div>
+  <div fxLayout="row" fxLayoutAlign="center" *ngIf="errMess">
+    <div class="errMess">
+      {{ errMess }}
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center">
+    <div fxLayout="row">
+      <div fxLayout="column">
+        <mat-form-field class="example-full-width">
+          <mat-label>User name</mat-label>
+          <input matInput [(ngModel)]="userName" autocomplete="off" />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput [(ngModel)]="password" autocomplete="off" />
+        </mat-form-field>
+
+        <button mat-raised-button (click)="login()">Login</button>
+      </div>
+    </div>
+  </div>
+</app-card>

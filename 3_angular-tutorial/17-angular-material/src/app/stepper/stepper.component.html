@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-title>Stepper</mat-card-title>
+    <mat-card-subtitle>
+        - sử dụng linear kết hợp với completed để  xác định người dùng có được phép next step hay không <br>
+        - có thể sử dụng mat-horizontal-stepper hoặc mat-vertical-stepper
+    </mat-card-subtitle>
+    <mat-card-content>
+
+        <mat-vertical-stepper linear>
+            <mat-step label="Shipping address" completed="true">
+                <p>shipping address detail</p>
+                <div><button mat-button matStepperNext>Next</button></div>
+            </mat-step>
+            <mat-step label="Builling address" completed="false">
+                <p>builling address detail</p>
+                <div>
+                    <button mat-button matStepperPrevious>Previous</button>
+                    <button mat-button matStepperNext>Next</button>
+                </div>
+            </mat-step>
+            <mat-step label="Place order" completed="false">
+                <p>Place order detail</p>
+                <div><button mat-button matStepperPrevious>Previous</button></div>
+            </mat-step>
+        </mat-vertical-stepper>
+
+    </mat-card-content>
+</mat-card>

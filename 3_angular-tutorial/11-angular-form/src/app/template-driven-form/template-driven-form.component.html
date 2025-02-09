@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">Template Driven Form</div>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <div class="form-group mb-3">
+        <label for="">Full name:</label>
+        <input
+          type="text"
+          class="form-control"
+          required
+          minlength="5"
+          ngModel
+          name="fullName"
+          #fullName="ngModel"
+          autocomplete="0"
+        />
+        <span *ngIf="fullName.invalid && fullName.touched" class="error-block">
+          <span *ngIf="fullName.errors.required"> Full name is required</span>
+          <span *ngIf="fullName.errors.minlength"> Full name is invalid</span>
+        </span> 
+      </div>
+      <div class="form-group mb-3">
+        <label for="">Email:</label>
+        <input type="text" class="form-control" ngModel name="email" />
+      </div>
+      <div class="form-group mb-3">
+        <label for="">Password:</label>
+        <input type="text" class="form-control" ngModel name="password" />
+      </div>
+      <div class="form-group mb-3">
+        <button  type="submit" class="btn btn-success">
+          Submit
+        </button>
+        <button type="reset" class="btn btn-warning ml-3">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>

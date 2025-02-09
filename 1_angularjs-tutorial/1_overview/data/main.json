@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Son",
+    "age": 18,
+    "rate": 5000,
+    "img": "../content/img/icon.png"
+  },
+  {
+    "name": "Khoa",
+    "age": 19,
+    "rate": 13200,
+    "img": "../content/img/icon.png"
+  },
+  {
+    "name": "Thong",
+    "age": 20,
+    "rate": 7800,
+    "img": "../content/img/icon.png"
+  }
+]

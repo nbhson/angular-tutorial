@@ -1,0 +1,48 @@
+<mat-card>
+    <mat-card-title>Menu</mat-card-title>
+    <mat-card-subtitle>
+        #appMenu="matMenu" dùng để khai báo menu <br>
+        và sử dụng matMenuTriggerFor để gọi @appMenu vào
+    </mat-card-subtitle>
+    <mat-card-content>
+        <mat-menu #appMenu="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="subMenu">Back End</button>
+            <button mat-menu-item>Font End</button>
+        </mat-menu>
+
+        <mat-menu #subMenu="matMenu">
+            <button mat-menu-item>Vue</button>
+            <button mat-menu-item>React</button>
+            <button mat-menu-item>Angular</button>
+        </mat-menu>
+
+        <button mat-icon-button [matMenuTriggerFor]="appMenu">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <button mat-button [matMenuTriggerFor]="aboveMenu">Above</button>
+        <mat-menu #aboveMenu="matMenu" yPosition="above">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="belowMenu">Below</button>
+        <mat-menu #belowMenu="matMenu" yPosition="below">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+
+        <button mat-button [matMenuTriggerFor]="beforeMenu">Before</button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+
+
+        <button mat-button [matMenuTriggerFor]="afterMenu">After</button>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+        </mat-menu>
+    </mat-card-content>
+</mat-card>

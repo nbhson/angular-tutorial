@@ -1,0 +1,26 @@
+.child-1, .child-2, .child-3, .child-4, .child-5{
+    padding: 15px;
+}
+
+.child-1{
+    color: #e5e5e5;
+    background: black;
+}
+.child-2{
+    color: #e5e5e5;
+    background: #dc2f02;
+}
+.child-3{
+    color: #e5e5e5;
+    background: #99c1de;
+}
+.child-4{
+    color: #e5e5e5;
+    background: #f9c74f;
+}
+.child-5{
+    color: #e5e5e5;
+    background: #00b4d8;
+}
+
+

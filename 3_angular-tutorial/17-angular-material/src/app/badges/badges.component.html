@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-title>Badges</mat-card-title>
+    <mat-card-content>
+        <mat-card-subtitle>Position badges</mat-card-subtitle>
+        <p>
+            <span [matBadge]="motifycation" [matBadgeHidden]="motifycation === 0">Notifycation</span>
+        </p>
+        <p>
+            <span matBadge="8" matBadgePosition="below before">Action </span>
+        </p>
+        <p>
+            <span matBadge="8" matBadgePosition="below after">Action</span>
+        </p>
+        <p>
+            <span matBadge="8" matBadgePosition="above before">Action</span>
+        </p>
+        <p>
+            <span matBadge="8" matBadgePosition="above after">Action</span>
+        </p>
+
+        <mat-card-subtitle>Size badges</mat-card-subtitle>
+        <p>
+            <span matBadge="8" matBadgeSize="small">Action </span>
+        </p>
+        <p>
+            <span matBadge="8" matBadgeSize="medium">Action</span>
+        </p>
+        <p>
+            <span matBadge="8" matBadgeSize="large">Action </span>
+        </p>
+
+        <mat-card-subtitle>Badges Color</mat-card-subtitle>
+        <p>
+            <span matBadge="8" matBadgeSize="small" matBadgeColor="accent">Action </span>
+        </p>
+        <p>
+            <span matBadge="8" matBadgeSize="medium" matBadgeColor="primary">Action </span>
+        </p>
+        <p>
+            <span matBadge="8" matBadgeSize="large" matBadgeColor="warn">Action </span>
+        </p>
+        <mat-card-subtitle>matBadgeOverlap (matBadge sẽ không đụng vào chữ)</mat-card-subtitle>
+        <p>
+            <span matBadge="8" matBadgeOverlap="false">Action</span>
+        </p>
+    </mat-card-content>
+</mat-card>

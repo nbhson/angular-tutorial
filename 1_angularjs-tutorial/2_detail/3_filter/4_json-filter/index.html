@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app-module">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+
+  <body ng-controller="app-controller">
+    <pre>{{marks | json}}</pre>
+
+    <pre>{{fruit | json : 3}}</pre>
+  </body>
+
+  <script>
+    var app = angular.module("app-module", []);
+
+    app.controller("app-controller", function ($scope) {
+      $scope.marks = {
+        Math: 98,
+        Computer: 93,
+        Physics: 95,
+        Chemistry: 95,
+        English: 74,
+      };
+
+      $scope.fruit = ["Apple", "Banana", "Mango"];
+    });
+  </script>
+</html>

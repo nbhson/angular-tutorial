@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <head>
+    <title>AngularJS Introduction</title>
+  </head>
+  <body style="text-align: center">
+    <h2 style="color: green">AngularJS Expressions</h2>
+
+    <!-- VD1 -->
+    <div  ng-init="name='Geeks for Geeks'">
+      <p>{{ name }} is a portal for geeks.</p>
+    </div>
+    <!-- VD2 -->
+    <div
+      ng-init="sort={one:'quick sort',
+        two:'merge sort', three:'bubble
+            sort'}"
+    >
+      <p>Sorting Algorithms:</p>
+      <ul style="list-style: none; padding: 0;">
+        <li>{{ sort.one }}</li>
+        <li>{{ sort.two }}</li>
+        <li>{{ sort.three }}</li>
+      </ul>
+    </div>
+  </body>
+</html>

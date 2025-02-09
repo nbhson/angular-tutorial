@@ -1,0 +1,43 @@
+<h3 class="text-info text-center mt-3">@Pipe</h3>
+<div *ngIf="post">
+    <div class="card mt-2 mb-3" style="width: 31rem;">
+        <div class="card-body">
+            <h5 class="card-title">{{post.title | upperCaseText}}</h5>
+            <p class="card-text">
+                {{post.body}}
+            </p>
+
+            <div class="row">
+                <div class="col-6">
+                    <button class="btn btn-warning me-3" (click)="changeSub(0)">Title</button>
+                    <button class="btn btn-warning" (click)="changeSub(1)">Content</button>
+                </div>
+                <div class="col-6">
+                    <div *ngIf="!seen" class="text-end">
+                        <div class="spinner-border" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf="subDetail === 0">
+        <h3 class="text-info text-center mt-3">@Input - @Output</h3>
+        <div class="card mt-2 mb-3" style="width: 31rem;" >
+            <div class="card-body">
+                <app-post-subtab-one [title]="post.title"></app-post-subtab-one>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="subDetail === 1">
+        <h3 class="text-info text-center mt-3">@Input - @Output</h3>
+        <div class="card mt-2 mb-3" style="width: 31rem;">
+            <div class="card-body">
+                <app-post-subtab-two [body]="post.body" (seen)="hasSeen($event)"></app-post-subtab-two>
+            </div>
+        </div>
+    </div>
+</div>

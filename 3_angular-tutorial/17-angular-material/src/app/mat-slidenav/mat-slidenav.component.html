@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-title>Slide Nav</mat-card-title>
+    <mat-card-content>
+        <mat-sidenav-container>
+            <mat-sidenav #sidenav mode="side" [(opened)]="opened">SideNav</mat-sidenav>
+            <mat-sidenav-content>
+                <mat-card-subtitle>
+                    mode="push" sẽ đẩy ra làm mờ nội dung <br>
+                    mode="side" đẩy ra nhưng không mờ nội dung (sử dụng được nút open và close) <br>
+                    còn mode="over" thì không (đổi được màu nền)
+                </mat-card-subtitle>
+
+                <button mat-raised-button *ngIf="opened" (click)="openedSide()">Click to hidden SideNav</button>
+                <button mat-raised-button *ngIf="!opened"(click)="openedSide()">Click to show SideNav</button>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+    </mat-card-content>
+</mat-card>
+
+<!-- <app-gi-do (SidenavigationToggle)="sidenav.toggle()"></app-gi-do> -->
+<!-- <app-gi-do (closeSideNavigation)="sidenav.close()"></app-gi-do> -->

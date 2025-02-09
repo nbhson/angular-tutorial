@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app-module">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+
+  <body ng-controller="app-controller">
+    <h1 style="color: green">GeeksforGeeks</h1>
+    <div>
+      <h3>ng-blur Directive</h3>
+      <h5 ng-show="msg">Enter your text here</h5>
+      <input type="text" ng-focus="msg=true" ng-blur="msg=false" />
+    </div>
+    <div>
+      <textarea ng-blur="count = count + 1" ng-init="count=0"> </textarea>
+      <h3>Number of times focus losed: {{count}}</h3>
+    </div>
+  </body>
+</html>

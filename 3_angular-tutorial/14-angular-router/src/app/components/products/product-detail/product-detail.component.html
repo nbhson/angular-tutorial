@@ -1,0 +1,20 @@
+<app-card>
+  <div class="title">Product Detail</div>
+  <h3>{{product.name}}</h3>
+
+  <div>{{product.id}}</div>
+  <div>{{product.price}}</div>
+  <div>{{product.status ? "Active" : "Deactive"}}</div>
+
+  <mat-divider></mat-divider>
+
+  <div style="padding: 16px 0;">
+    <button mat-raised-button (click)="backToList()">Back to list</button>
+    <button mat-raised-button (click)="edit()">Edit</button>
+  </div>
+</app-card>
+
+
+
+
+

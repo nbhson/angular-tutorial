@@ -1,0 +1,12 @@
+<mat-card>
+	<mat-card-title>Button Toggle</mat-card-title>
+	<mat-card-content>
+        <mat-button-toggle-group #menuToggle="matButtonToggleGroup" multiple>
+            <mat-button-toggle value="Vue">Vue</mat-button-toggle>
+            <mat-button-toggle value="React">React</mat-button-toggle>
+            <mat-button-toggle value="Angular">Angular</mat-button-toggle>
+        </mat-button-toggle-group>
+        
+        {{menuToggle.value}}
+	</mat-card-content>
+</mat-card>

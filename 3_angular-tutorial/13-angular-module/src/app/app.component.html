@@ -1,0 +1,25 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="push">
+    <app-side-nav></app-side-nav>
+  </mat-drawer>
+
+  <div class="sidenav-content" (changeStatus)="changeStatus()">
+    <mat-toolbar class="mat-elevation-z4" fxLayout="row" fxLayoutAlign="space-between center">
+      <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+        <div>
+          <span (click)="navigate('/home')">Home</span>
+          <span (click)="navigate('/products')">Products</span>
+          <span (click)="navigate('/contact')">Contact</span>
+          <span (click)="navigate('/about')">About</span>
+        </div>
+        <div>
+          <span (click)="navigate('/login')">Login</span>
+          <span (click)="logout()">Logout</span>
+        </div>
+    </mat-toolbar>
+
+    <app-login (changeStatus)="changeStatus()" [hidden]="true"></app-login>
+
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

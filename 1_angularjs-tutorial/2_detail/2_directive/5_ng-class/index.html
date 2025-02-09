@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app-module">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+    <script type="module" src="./app.js"></script>
+    <style>
+      .edit-style {
+        color: green;
+        font-size: 2em;
+      }
+    </style>
+  </head>
+
+  <body ng-controller="app-controller">
+    <!-- ng-class -->
+    <div>
+      <input type="button" ng-click="edit=true" value="Style" />
+      <input type="button" ng-click="edit=false" value="Reset" />
+
+      <br /><br />
+
+      <span ng-class="{true:'edit-style'}[edit]"> GeeksforGeeks </span>
+      is the computer science portal for geeks.
+    </div>
+
+    <!-- ng-class-even -->
+    <table>
+      <thead>
+        <th>sorting techniques:</th>
+        <tr ng-repeat="i in sort">
+          <td ng-class-even="'index-chan-class'">{{i.name}}</td>
+        </tr>
+      </thead>
+    </table>
+
+    <!-- ng-class-odd -->
+    <table>
+      <thead>
+        <th>sorting techniques:</th>
+        <tr ng-repeat="i in sort">
+          <td ng-class-odd="'index-le-class'">{{i.name}}</td>
+        </tr>
+      </thead>
+    </table>
+  </body>
+</html>

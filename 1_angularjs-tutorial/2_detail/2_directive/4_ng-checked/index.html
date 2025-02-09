@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app-module">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+
+  <body ng-controller="app-controller">
+    <input
+      type="checkbox"
+      ng-checked="check1 &&
+    check2 && check3 && check4 && check5"
+      ng-model="isChecked"
+    /><b>Select All</b><br />
+
+    <input
+      type="checkbox"
+      ng-model="check1"
+      ng-checked="isChecked"
+    />First<br />
+
+    <input
+      type="checkbox"
+      ng-model="check2"
+      ng-checked="isChecked"
+    />Second<br />
+
+    <input
+      type="checkbox"
+      ng-model="check3"
+      ng-checked="isChecked"
+    />Three<br />
+
+    <input type="checkbox" ng-model="check4" ng-checked="isChecked" />
+    Four<br />
+
+    <input
+      type="checkbox"
+      ng-model="check5"
+      ng-checked="isChecked"
+    />Five<br /><br />
+
+    <b>isAllSelected = {{isChecked}}</b>
+  </body>
+</html>

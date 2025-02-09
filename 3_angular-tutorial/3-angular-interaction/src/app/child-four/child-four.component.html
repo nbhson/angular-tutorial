@@ -1,0 +1,30 @@
+<app-card>
+  <div class="title">Child Four</div>
+  <form>
+    <div class="form-group">
+      <mat-form-field appearance="legacy">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          placeholder="Placeholder"
+          name="name"
+          autocomplete="off"
+          [(ngModel)]="name"
+        />
+      </mat-form-field>
+    </div>
+    <div class="form-group">
+      <mat-form-field appearance="legacy">
+        <mat-label>Age:</mat-label>
+        <input
+          matInput
+          placeholder="Placeholder"
+          name="age"
+          autocomplete="off"
+          [(ngModel)]="age"
+        />
+      </mat-form-field>
+    </div>
+    <button mat-raised-button (click)="onSubmit()">Submit</button>
+  </form>
+</app-card>

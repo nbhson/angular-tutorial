@@ -1,0 +1,22 @@
+[
+  {
+     "name" : "Ronaldo",
+     "goals" : 128,
+     "ratio" : "69%"
+  },
+  {
+     "name" : "James",
+     "goals" : 517,
+     "ratio" : "70%"
+  },
+  {
+     "name" : "Ali",
+     "goals" : 786,
+     "ratio" : "99%"
+  },
+  {
+     "name" : "Lionel ",
+     "goals" : 210,
+     "ratio" : "100%"
+  }
+]

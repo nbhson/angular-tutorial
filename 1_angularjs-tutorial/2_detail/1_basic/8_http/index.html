@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app-module">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="./app.js"></script>
+
+  <style>
+    table,
+    th,
+    td {
+      border: 1px #2e0854;
+      border-collapse: collapse;
+      padding: 5px;
+    }
+
+    table tr:nth-child(odd) {
+      background-color: #f6adcd;
+    }
+
+    table tr:nth-child(even) {
+      background-color: #42c0fb;
+    }
+  </style>
+  <head>
+    <title>AngularJS Introduction</title>
+  </head>
+  <body style="text-align: center" ng-controller="app-controller">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Goals</th>
+        <th>Ratio</th>
+      </tr>
+      <tr ng-repeat="student in students">
+        <td>{{ student.name }}</td>
+        <td>{{ student.goals}}</td>
+        <td>{{ student.ratio}}</td>
+      </tr>
+    </table>
+  </body>
+</html>

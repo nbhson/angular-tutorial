@@ -1,0 +1,12 @@
+<app-card>
+  <div class="title">Enter key to continue...</div>
+  <div>
+    <div class="errMess" *ngIf="errMess != ''">{{errMess}}</div>
+    <mat-form-field class="example-full-width">
+      <mat-label>User name</mat-label>
+      <input matInput [(ngModel)]="key" autocomplete="off" />
+    </mat-form-field>
+
+    <button mat-raised-button (click)="access()">Access</button>
+  </div>
+</app-card>

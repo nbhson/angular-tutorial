@@ -1,0 +1,20 @@
+<app-card>
+
+  <div class="title">ngAfterContentInit - ngAfterContentChecked</div>
+
+  <div>
+    <app-child-ng-after-init>
+      <div class="my-class mat-title">
+       {{myContent}}
+      </div>
+    </app-child-ng-after-init>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Favorite food</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="Sushi" #content>
+    </mat-form-field>
+
+    <button mat-stroked-button (click)="onChangeContent(content.value)">Click</button>
+  </div>
+
+</app-card>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app-module">
+  <head>
+    <base href="/" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-resource.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+
+  <body ng-controller="app-controller">
+    <ol>
+      <strong>
+        <li ng-repeat="x in names | filter : 'e'">{{ x }}</li>
+      </strong>
+    </ol>
+
+    <ol>
+      <li ng-repeat="x in customers | filter :{'name' : 'e', 'city' : 'Patna'}">
+        {{x.name + ", " + x.city}}
+      </li>
+    </ol>
+
+    <ol>
+      <li ng-repeat="x in customers2 | filter : 'Chinchwad' : true">
+        {{x.name + ", " + x.city}}
+      </li>
+    </ol>
+  </body>
+
+  <script>
+    var app = angular.module("app-module", []);
+
+    app.controller("app-controller", function ($scope) {
+      $scope.names = [
+        "Jani",
+        "Carl",
+        "Margareth",
+        "Hege Mathew",
+        "Joey Tribiani",
+        "Gustav",
+        "Birgit",
+        "Mary",
+        "Kai",
+      ];
+
+      $scope.customers = [
+        {
+          name: "Chocolate Shake",
+          city: "Patna",
+        },
+        {
+          name: "Hot Chocolate",
+          city: "Delhi",
+        },
+        {
+          name: "Milk",
+          city: "Patna",
+        },
+        {
+          name: "Coffee",
+          city: "Patna",
+        },
+        {
+          name: "Tea",
+          city: "Pune",
+        },
+        {
+          name: "Mineral Water",
+          city: "Mumbai",
+        },
+        {
+          name: "Iced Tea",
+          city: "Bangalore",
+        },
+      ];
+      $scope.customers2 = [
+        {
+          name: "Mumbai Food",
+          city: "Chinchwad",
+        },
+        {
+          name: "Gurgaon Catering",
+          city: "Haryana City",
+        },
+        {
+          name: "Noida temperature",
+          city: " Chinchwad",
+        },
+      ];
+    });
+  </script>
+</html>

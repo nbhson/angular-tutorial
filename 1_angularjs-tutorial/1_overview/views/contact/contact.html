@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-center">
+  <div class="card" style="width: 32rem">
+    <div class="card-header">Add Contact Form</div>
+    <div class="card-body">
+      <h5 class="card-title"></h5>
+      <form class="form-group" name="contactForm" ng-submit="addContact()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            class="form-control"
+            type="text"
+            name="name"
+            placeholder="Enter name"
+            ng-model="contact.name"
+            ng-required="true"
+          />
+          <div ng-show="contactForm.name.$touched && contactForm.name.$invalid">
+            <small style="color: red">Name is invalid!</small>
+          </div>
+        </div>
+
+        <!-- <span>$pristine - {{contactForm.name.$pristine}}</span>
+        <span>$dirty - {{contactForm.name.$dirty}}</span>
+        <span>$untouched - {{contactForm.name.$untouched}}</span>
+        <span>$touched - {{contactForm.name.$touched}}</span>
+        <span>$valid - {{contactForm.name.$valid}}</span>
+        <span>$invalid - {{contactForm.name.$invalid}}</span> -->
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Email</label>
+          <input
+            class="form-control"
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            ng-model="contact.email"
+            ng-required="true"
+          />
+          <div
+            ng-show="contactForm.email.$touched && contactForm.email.$invalid"
+          >
+            <small style="color: red">Name is invalid!</small>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Email</label>
+          <textarea
+            class="form-control"
+            name="message"
+            placeholder="Enter message"
+            ng-model="contact.message"
+            ng-required="true"
+          ></textarea>
+          <div
+            ng-show="contactForm.message.$touched && contactForm.message.$invalid"
+          >
+            <small style="color: red">Name is invalid!</small>
+          </div>
+        </div>
+        <!-- {{contact}} {{contactForm.$invalid}} -->
+        <input
+          class="btn btn-primary"
+          type="submit"
+          value="Add ninja"
+          ng-disabled="contactForm.$invalid"
+        />
+      </form>
+    </div>
+  </div>
+</div>

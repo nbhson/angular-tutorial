@@ -1,0 +1,12 @@
+<div>
+    <a routerLink="home">Home</a>
+    <a routerLink="dashboard" style="margin-left: 16px;">Dashboard</a>
+</div>
+
+<!-- <app-card></app-card> > REQUIRED title > ERROR  -->
+<!-- <app-card [title]="'Card'"></app-card> -->
+<app-card [title]="'Card'" /> <!-- shorthand -->
+
+<div>
+    <router-outlet></router-outlet>
+</div>

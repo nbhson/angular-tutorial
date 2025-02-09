@@ -1,0 +1,22 @@
+body {
+    background-color: gray;
+}
+
+.container {
+    margin: 16px;
+    height: 400px;
+    overflow: auto;
+}
+
+.container-table-virtual {
+    height: 400px;
+    table {
+        border: 1px solid #b1b1b1;
+        tr {
+            height: 50px;
+            th {
+                background-color: white !important;
+            }
+        }
+    }
+}
