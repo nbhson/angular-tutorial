@@ -119,3 +119,34 @@ export class AppComponent implements OnInit {
   }
 }
 ```
+
+# The NonNullableFormBuilder service
+
+If you are building a large form where all of its fields are non-nullable, then marking the fields as non-nullable one by one could become quite verbose.
+
+```ts
+@Component({
+  selector: 'login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent {
+
+   form = this.fb.group({
+      email: ["", {
+        validators: [Validators.required, Validators.email]
+      }],
+      password: ["", [Validators.required, Validators.minLength(8)] ]
+    });;
+
+  constructor(private fb: NonNullableFormBuilder) {
+  }
+
+}
+```
+
+![alt text](image.png)
+
+As you can see, now all of the fields are considered non-nullable, as they are being reset to their initial value as expected (and not to null).
+
+<https://blog.angular-university.io/angular-typed-forms/>

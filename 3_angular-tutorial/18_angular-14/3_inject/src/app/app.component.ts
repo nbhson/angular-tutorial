@@ -32,6 +32,6 @@ export class AppComponent {
 
   ngOnInit(): void {
     // const token = inject(MY_TOKEN); // NOT work
-    // console.log(token); // ERRRO
+    // console.log(token); // ERROR
   }
 }
