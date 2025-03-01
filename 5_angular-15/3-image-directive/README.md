@@ -59,6 +59,8 @@ If you’re using pure HTML5, there are a few img attributes for the image tag b
 
 The v15 release also includes a few new features for the image directive:
 
+> Bằng cách tích hợp chỉ thị NgOptimizedImage vào thành phần Angular hoặc NgModule, bạn có thể giảm đáng kể thời gian tải xuống hình ảnh trong ứng dụng của mình. Chỉ thị này đơn giản hóa việc triển khai các kỹ thuật tối ưu hóa hiệu suất để tải hình ảnh.
+
 - `Automatic srcset generation`: lệnh này đảm bảo rằng hình ảnh có kích thước phù hợp được yêu cầu bằng cách tạo thuộc tính srcset cho bạn. Điều này có thể làm giảm thời gian tải xuống hình ảnh của bạn.
 - `Fill mode [experimental]`: chế độ này làm cho hình ảnh lấp đầy vùng chứa chính của nó, loại bỏ yêu cầu khai báo chiều rộng và chiều cao của hình ảnh. Đây là một công cụ hữu ích nếu bạn không biết kích thước hình ảnh của mình hoặc nếu bạn muốn di chuyển hình nền CSS để sử dụng lệnh.
 
@@ -83,8 +85,112 @@ Sử dụng chỉ thị hình ảnh. Bây giờ theo mặc định, tất cả h
 ### Resource Time Delay
 - Đây là thời gian thực sự cần thiết để tải xuống hình ảnh, bất cứ khi nào bạn quyết định tải xuống. Không phải lúc nào bạn cũng muốn có phiên bản lớn nhất của hình ảnh vì một hình ảnh lớn có thể mất 2 giây. Tất cả những gì bạn phải làm là xác định thuộc tính kích thước và NgOptimizedImage sẽ tự động tạo srcset cho bạn!
 
+## Stable NgOptimizedImage Directive
+
+NgOptimizedImage trong Angular 15 thay đổi bao gồm một loạt các phương pháp hay nhất về hình ảnh vượt ra ngoài tối ưu hóa LCP. Sau đây là một số phương pháp này:
+
+- Responsive Image Handling: Chỉ thị tự động tạo các thuộc tính src set đáp ứng dựa trên khả năng của thiết bị. Điều này đảm bảo rằng phiên bản hình ảnh phù hợp được tải theo kích thước và độ phân giải màn hình, nâng cao trải nghiệm của người dùng trên nhiều thiết bị khác nhau.
+- WebP Format Support: NgOptimizedImage cung cấp hỗ trợ dự phòng liền mạch cho định dạng hình ảnh WebP. WebP cung cấp khả năng nén và hiệu suất vượt trội cho các trình duyệt hỗ trợ, giúp tải hình ảnh nhanh hơn và cải thiện hiệu quả.
+- Lazy Loading: Chỉ thị này triển khai tải chậm cho các hình ảnh không hiển thị ngay trong chế độ xem. Bằng cách trì hoãn việc tải các hình ảnh này cho đến khi cần, thời gian tải trang ban đầu được cải thiện, dẫn đến trải nghiệm người dùng nhanh hơn và mượt mà hơn. Cách tiếp cận này cũng giúp tiết kiệm băng thông, đặc biệt là đối với người dùng có gói dữ liệu hạn chế.
+- Image Compression: NgOptimizedImage kết hợp các kỹ thuật nén hình ảnh để giảm kích thước tệp mà không làm giảm đáng kể chất lượng hình ảnh. Bằng cách tối ưu hóa hình ảnh, thời gian tải xuống được giảm, dẫn đến tải trang nhanh hơn và cải thiện hiệu suất tổng thể.
+
+## All of properties
+
+### Enable the directive
+
+To activate the NgOptimizedImage directive, replace your image's src attribute with `ngSrc`.
+
+```html
+<img ngSrc="cat.jpg">
+```
+
+### Mark images as priority
+
+Luôn đánh dấu hình ảnh LCP trên trang của bạn là ưu tiên để ưu tiên tải hình ảnh đó.
+```html
+<img ngSrc="cat.jpg" width="400" height="200" priority>
+```
+
+Marking an image as priority applies the following optimizations:
+
+#### `fetchpriority` <https://web.dev/articles/fetch-priority>
+- fetchpriority="`high`":
+  - Cho trình duyệt biết đây là tài nguyên quan trọng cần tải sớm
+  - Thường dùng cho các tài nguyên thiết yếu như hero image, CSS/JS quan trọng
+  - Trình duyệt sẽ cấp phát nhiều tài nguyên hơn để tải nhanh hơn
+- fetchpriority="`low`":
+  - Báo hiệu đây là tài nguyên ít quan trọng, có thể tải sau
+  - Dùng cho các tài nguyên không thiết yếu như ảnh ở cuối trang
+  - Trình duyệt sẽ tải với độ ưu tiên thấp hơn
+  
+#### `loading` <https://web.dev/articles/browser-level-image-lazy-loading>
+- loading="`eager`":
+  - Tải hình ảnh ngay lập tức, không quan tâm vị trí của nó có nằm trong viewport hay không
+  - Đây là hành vi mặc định của trình duyệt
+  - Phù hợp cho các hình ảnh quan trọng cần hiển thị ngay (như hero image)
+  - Có thể tiêu tốn băng thông không cần thiết nếu sử dụng cho tất cả hình ảnh
+- loading="`lazy`":
+  - Trì hoãn việc tải hình ảnh cho đến khi nó gần xuất hiện trong viewport
+  - Giúp tối ưu hiệu suất trang web bằng cách chỉ tải khi cần thiết
+  - Phù hợp cho các hình ảnh ở phía dưới trang
+  - Tiết kiệm băng thông và bộ nhớ
+
+> Nên kết hợp với fetchpriority để tối ưu hóa
+> Lazy loading có thể gây ra layout shift (hay Cumulative Layout Shift - CLS) nếu không xử lý đúng cách. Nên luôn chỉ định kích thước hình ảnh
+
+#### Include Width and Height:
+- In order to prevent image-related layout shifts, NgOptimizedImage requires that you specify a height and width for your image, as follows:
+```html
+<img ngSrc="cat.jpg" width="400" height="200">
+```
+- For responsive images it's also important to set a value for sizes.
+
+#### Using fill mode
+- In cases where you want to have an image fill a containing element, you can use the fill attribute. This is often useful when you want to achieve a "background image" behavior. It can also be helpful when you don't know the exact width and height of your image, but you do have a parent container with a known size that you'd like to fit your image into (see "object-fit" below).
+- When you add the fill attribute to your image, you do not need and should not include a width and height, as in this example:
+
+```html
+<img ngSrc="cat.jpg" fill>
+```
+
+> `IMPORTANT`: For the "fill" image to render properly, its parent element must be styled with position: "relative", position: "fixed", or position: "absolute".
+
+
+#### Using placeholders
+
+- NgOptimizedImage can display an automatic low-resolution placeholder for your image if you're using a CDN or image host that provides automatic image resizing. Take advantage of this feature by adding the placeholder attribute to your image:
+
+```html
+<img ngSrc="cat.jpg" width="400" height="200" placeholder>
+```
+
+- The default size for generated placeholders is 30px wide. You can change this size by specifying a pixel value in the IMAGE_CONFIG provider, as seen below:
+
+```angular
+providers: [
+  {
+    provide: IMAGE_CONFIG,
+    useValue: {
+      placeholderResolution: 40
+    }
+  },
+],
+```
+
+- You can also specify a placeholder using a base64 data URL without an image loader
+```html
+<img 
+  ngSrc="cat.jpg" 
+  width="400" 
+  height="200" 
+  placeholder="data:image/png;base64,iVBORw0K..."
+/>
+```
+
 ## Roadmap
 
 - There is a developer preview for fill, which is available now. This allows you to eliminate width/height and add styles for auto sizing.
 - Picture tag support
 - Auto-generate preconnect link tags
+
+<https://angular.dev/guide/image-optimization>

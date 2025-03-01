@@ -9,6 +9,6 @@ import { FontWeightDirective } from '../directive/font-weight.directive';
   // Directive Composition API inside directives
   // hostDirectives:[RedColorDirective, FontWeightDirective]
 })
-export class TestdirectiveComponent {
+export class TestDirectiveComponent {
 
 }

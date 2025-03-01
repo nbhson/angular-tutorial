@@ -19,7 +19,7 @@ const route = {
 ```
 
 LoginService implements most of the logic and in the guard we only invoke isLoggedIn(). Even though the guard is pretty simple, we have lots of boilerplate code.
-With the new functional router guards, you can refactor this code down to:
+With the new functional router guards, you can refactor this code down to (With the new functional router guards, you can refactor this code down to:):
 
 ```ts
 const route = {

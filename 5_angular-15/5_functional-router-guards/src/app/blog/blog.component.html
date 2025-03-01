@@ -1,0 +1,14 @@
+<div class="card w-100">
+  <div class="card-body">
+    <h5 class="card-title">Blog Component</h5>
+    <ul *ngFor="let todo of todos$  | async; let i = index;">
+      <li data-bs-toggle="collapse" [attr.href]="'#collapseExample' + i" role="button" >{{todo.id}}: {{todo.userId}}</li>
+      <div class="collapse" [id]="'collapseExample' + i">
+        <div class="card card-body">
+          <app-blog-detail [title]="todo.title" [completed]="todo.completed"></app-blog-detail>
+        </div>
+      </div>
+    </ul>
+  </div>
+</div>
+

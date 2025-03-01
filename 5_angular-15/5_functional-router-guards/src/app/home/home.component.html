@@ -1,0 +1,12 @@
+<div class="card w-100">
+  <div class="card-body">
+    <h5 class="card-title">Home Component</h5>
+    <div *ngIf="languages.length === 3">
+      {{languages | json}}
+    </div>
+    
+    <ul *ngFor="let language of languages">
+      <li>{{language}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 # Better stack traces
 
+Thông qua sự hợp tác với các nhà phát triển Google Chrome, Angular đã tinh chỉnh cách trình bày các dấu vết ngăn xếp, tạo ra các đầu ra hợp lý và nhiều thông tin hơn.
+
 We partnered with Chrome DevTools to fix this! Let’s look at a sample stack trace that you may get working on an Angular app:
 
 ```json
@@ -33,3 +35,5 @@ Error
     at submit (app.component.ts:15)
     at AppComponent_click_3_listener (app.component.html:4)
 ```
+
+> Bằng cách cung cấp dấu vết ngăn xếp sạch hơn và tập trung hơn, việc gỡ lỗi trở nên hiệu quả hơn và ít tốn thời gian hơn. Các nhà phát triển có thể nhanh chóng xác định nguồn lỗi hoặc ngoại lệ và hiểu rõ hơn về luồng ứng dụng của họ. Các tính năng của Angular 15 cải thiện đáng kể trải nghiệm gỡ lỗi cho các ứng dụng Angular bằng cách cung cấp ngữ cảnh rõ ràng hơn và giảm thiểu thông tin không liên quan.

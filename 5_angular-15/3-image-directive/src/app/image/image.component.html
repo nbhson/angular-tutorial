@@ -1,9 +1,25 @@
-<img 
-    ngSrc="assets/demo.jpg" 
-    fetchpriority="high"
-    loading="lazy"
-    alt="Adorable kitty"
-    srcset="assets/demo.jpg 480w, assets/demo2.jpg 800w"
-    sizes="(max-width: 600px) 480px, 800px"
-    fill
->
+<div style="position: relative;">
+    <!-- migrate your background image -->
+
+    <!-- <img 
+        ngSrc="assets/demo.jpg" 
+        fetchpriority="high"
+        loading="lazy"
+        alt="Adorable kitty"
+        srcset="assets/demo.jpg 480w, assets/demo2.jpg 800w"
+        fill
+    > -->
+
+    <!-- lazy loading -->
+    <ng-container *ngFor="let id of ids">
+        <img
+            [ngSrc]="'https://placecats.com/' + id +'/' + id"    
+            loading="lazy"
+            fetchpriority="low"
+            width="400"
+            height="400"
+            alt=""
+        >
+    </ng-container>
+
+</div>
