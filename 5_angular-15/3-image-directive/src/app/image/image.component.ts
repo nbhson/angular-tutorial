@@ -17,7 +17,7 @@ import { CommonModule, IMAGE_CONFIG, NgFor, NgOptimizedImage } from '@angular/co
   ]
 })
 export class ImageComponent {
-  ids = Array.from({length: 100}, (_, i) => i + 400);
+  ids = Array.from({length: 10}, (_, i) => i + 400);
 
   ngOnInit(): void {
     console.log(this.ids);

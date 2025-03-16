@@ -1,4 +1,5 @@
 <div style="position: relative;">
+    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam nulla enim dicta corporis fuga voluptate eum mollitia earum voluptatibus nostrum expedita ratione vitae totam, nesciunt quas adipisci quaerat amet laborum!</h1>
     <!-- migrate your background image -->
 
     <!-- <img 
@@ -11,15 +12,16 @@
     > -->
 
     <!-- lazy loading -->
-    <ng-container *ngFor="let id of ids">
+    <!-- <ng-container *ngFor="let id of ids; let i = index">
         <img
             [ngSrc]="'https://placecats.com/' + id +'/' + id"    
             loading="lazy"
             fetchpriority="low"
             width="400"
             height="400"
-            alt=""
+            [alt]="i"
+            placeholder
         >
-    </ng-container>
+    </ng-container> -->
 
 </div>

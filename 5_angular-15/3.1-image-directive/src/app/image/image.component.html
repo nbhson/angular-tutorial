@@ -1,0 +1,40 @@
+<div style="position: relative; width: 100%; max-height: 750px;">
+
+    <img
+        [ngSrc]="'assets/399.webp'"
+        width="250"
+        height="250"
+        alt="Pizza image"
+        priority
+    > 
+
+    <!-- <img
+        [ngSrc]="'https://placecats.com/399/399/'"
+        style="border: 2px solid red;"
+        width="750"
+        height="750"
+        alt="Pizza image"
+        priority
+    > -->
+
+    <!-- <img
+        [ngSrc]="'https://placecats.com/399/399/'"
+        fill
+        style="border: 2px solid red; position: relative;"
+        alt="Pizza image"
+        priority
+    > -->
+    <h1>Let's talk pizza!</h1>
+
+    <p>
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid ipsa, nam repellendus deserunt cumque, blanditiis quo sunt quaerat, sequi tempora a rerum numquam adipisci quos error ea excepturi deleniti! Ratione. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos facilis nobis quaerat voluptatum sed aspernatur hic, suscipit maiores fuga aperiam expedita ipsum eaque quod voluptas nemo labore autem quis quasi?
+    </p>
+
+    <section *ngIf="ids.length > 0">
+        <article *ngFor="let id of ids">
+            <p>Lorem ipsum {{id}}...</p>
+            <img [ngSrc]="'https://placecats.com/' + id +'/' + id" width="250" height="250" [alt]="id" fetchpriority="low">
+        </article>
+    </section>
+
+</div>
