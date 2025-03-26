@@ -114,3 +114,5 @@ updateBoolean() {
   this.signalBoolean.update(previousValue => !previousValue); // tự động markForCheck
 }
 ```
+
+![image](https://github.com/user-attachments/assets/40f55f5a-1fde-43af-ae2e-fd0faffc025e)
