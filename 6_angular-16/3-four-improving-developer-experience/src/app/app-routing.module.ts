@@ -11,9 +11,13 @@ const routes: Routes = [
   {
     path: 'home/:id',
     component: HomeComponent,
-    resolve: { contact: () => getContact() },
+    resolve: { 
+      contact: () => getContact(),
+      id: () => 'id from resolve'
+    },
     data: {
       heroPower: 'Force',
+      id: 'id from data'
     },
   },
   { path: 'dashboard', component: DashboardComponent },
