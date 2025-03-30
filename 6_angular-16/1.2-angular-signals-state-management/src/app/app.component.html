@@ -1,0 +1,11 @@
+@if (error()) {
+  <span style="color: red;">{{ error() }}</span>
+} 
+@else {
+  @if (isLoading()) {
+    Loading...
+  }@else {
+    <app-category [categories]="categories()" (remove)="onRemove($event)" />
+    <button (click)="onAdd()">Add Item</button>
+  }
+}

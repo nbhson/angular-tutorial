@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { BroadcastService } from './signal-types/broadcast/broadcast.service';
+import { Component, computed, signal, effect, untracked } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -10,11 +9,22 @@ import { RouterLink, RouterOutlet } from '@angular/router';
     imports: [RouterLink, RouterOutlet]
 })
 export class AppComponent {
-  message: string = '';
+  counter = signal(0);
+  counter2 = this.counter.asReadonly();
+  derivedCounter = computed(() => {
+    console.log('trigger computed');
+    return this.counter() * 10;
+  })
+  effect = effect(() => {
+    const currentCount = this.counter();
+    const derivedCounter = this.derivedCounter();
+    console.log(`current values: ${currentCount} ${derivedCounter}`);
+  });
 
-  constructor(private broadcastService: BroadcastService) {
-    this.broadcastService.broadcastSubject$.subscribe(message => {
-      this.message = message;
-    });
+  constructor() {}
+
+  increment() {
+    console.log(`Updating counter...`)
+    this.counter.set(this.counter() + 1);
   }
 }

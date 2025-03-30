@@ -1,0 +1,10 @@
+<ul>
+  @for(category of categories(); track $index) {
+  <li>
+    <h5 (click)="onRemove(category.name)" style="cursor: pointer;">{{category.name}}</h5>
+    <app-product [products]="category.products"></app-product>
+  </li>
+  }@empty {
+    <span>No Record Found!</span>
+  }
+</ul>
