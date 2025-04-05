@@ -1,0 +1,8 @@
+
+<button (click)="onLoad()">Trigger Prefetch</button>
+
+<button (click)="onDisplay()">Trigger Display</button>
+
+@defer(when show; prefetch when load) {
+    <app-large />
+}
