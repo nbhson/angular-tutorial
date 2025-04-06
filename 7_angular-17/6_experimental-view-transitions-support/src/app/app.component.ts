@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = '1_hydration';
+  title = '6_experimental-view-transitions-support';
 }

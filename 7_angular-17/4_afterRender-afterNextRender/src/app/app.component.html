@@ -1,0 +1,20 @@
+<h1 style="margin-left: 10px;">
+    Angular v18.1.0-next.2: afterNextRender & afterRender new Design
+</h1>
+
+<div
+    class="word-block"
+    #wordBlock
+>
+    <input
+        type="text"
+        class="beautiful-input"
+        [ngModel]="word()"
+        (ngModelChange)="word.set($event);"
+        placeholder="Find the secret word!"
+    >
+</div>
+
+<p>
+  {{word()}} - {{success()}}
+</p>

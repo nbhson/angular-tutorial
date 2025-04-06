@@ -1,0 +1,17 @@
+<h2>Photo list</h2>
+@for (photo of photoList; track photo.id) {
+  <div>
+    <a [routerLink]="['/photos/', photo.id]">
+      <img
+        width="300"
+        height="200"
+        [src]="photo.thumbnail"
+        [style.viewTransitionName]="'photo-id-' + photo.id"
+      />
+    </a>
+  </div>
+}
+<!-- <footer>
+  Angular View Transition API demo -
+  <a routerLink="/">Home</a>
+</footer> -->

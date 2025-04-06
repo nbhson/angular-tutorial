@@ -1,5 +1,5 @@
 {
-  "name": "1-hydration",
+  "name": "6-experimental-view-transitions-support",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
