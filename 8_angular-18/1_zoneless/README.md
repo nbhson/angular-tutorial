@@ -255,8 +255,16 @@ Chúng tôi đã kích hoạt hỗ trợ không vùng trong Angular CDK và Angu
 - Compatibility: Hoạt động liền mạch với các API hiện đại và thư viện của bên thứ ba.
 - Khả năng phản ứng nâng cao: Kết hợp với tín hiệu, chế độ không vùng giúp đơn giản hóa việc quản lý trạng thái và cải thiện khả năng phản hồi của ứng dụng.
 
+## Create a Zone-Less App by Default?
+
+```bash
+ng new my-app --experimental-zoneless
+```
+
 ## Reference 
 
 <https://dev.to/soumayaerradi/angular-change-detection-with-zoneless-413f>
 
 <https://angular.love/the-latest-in-angular-change-detection-zoneless-signals>
+
+<https://dev.to/danywalls/angular-19-and-zoneless-1of9>
