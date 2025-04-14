@@ -62,6 +62,8 @@ Angular theo truyền thống đã sử dụng zone.js để vá các hoạt đ�
 - HTTP requests (success/error).
 - Event listeners (e.g., button clicks).
 - Timers like setTimeout or setInterval.
+ 
+> https://stackblitz.com/edit/zoneless-deborahk-ocfystv1?file=src%2Fapp.config.ts,src%2Fmain.ts
 
 Khi bất kỳ thao tác nào trong số này được hoàn thành, zone.js sẽ tự động kích hoạt cơ chế phát hiện thay đổi của Angular, đảm bảo giao diện người dùng luôn đồng bộ. Điều này giúp việc phát triển dễ dàng hơn, vì các nhà phát triển không cần phải lo lắng về việc cập nhật giao diện người dùng theo cách thủ công.
 
