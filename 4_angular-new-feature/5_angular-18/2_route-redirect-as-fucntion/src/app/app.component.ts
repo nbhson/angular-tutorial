@@ -1,5 +1,5 @@
 import { JsonPipe } from '@angular/common';
-import { Component, inject, VERSION } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, VERSION } from '@angular/core';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 
 @Component({
@@ -37,8 +37,11 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
     a {
       margin: 0 4px;
     }
-  `]
+  `],
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
+
 export class AppComponent {
   router = inject(Router);
   angularVersion = VERSION;
