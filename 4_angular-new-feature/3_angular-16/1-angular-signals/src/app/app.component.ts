@@ -21,7 +21,7 @@ export class AppComponent {
     console.log(`current values: ${currentCount} ${derivedCounter}`);
   });
 
-  constructor() {}
+  constructor() { }
 
   increment() {
     console.log(`Updating counter...`)
