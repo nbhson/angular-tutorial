@@ -1,0 +1,15 @@
+<div>
+  Select your allegiance:<br/>
+  <input type="radio" id="jedi" name="Jedi" value="jedi" [(ngModel)]="allegiance">
+  <label for="jedi">&nbsp;&nbsp;Jedi</label><br/>
+  <input type="radio" id="sith" name="Sith" value="sith" [(ngModel)]="allegiance">
+  <label for="sith">&nbsp;&nbsp;Sith</label><br/>
+</div>
+
+<hr>
+
+Selected allegiance: {{ allegiance() }}
+
+<hr>
+
+<router-outlet [routerOutletData]="fighterIds()" />
