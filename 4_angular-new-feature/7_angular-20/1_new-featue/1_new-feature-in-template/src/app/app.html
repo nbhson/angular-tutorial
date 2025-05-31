@@ -1,0 +1,10 @@
+@for (attack of attacks; track attack) {
+    @let hasMagicDamage = 'magicDamage' in attack;
+    @if (hasMagicDamage) {
+      <p>{{ `Dealt ${attack.magicDamage} points of magic damage.` }}</p>
+    }
+    @let hasPhysicalDamage = 'physicalDamage' in attack;
+    @if (hasPhysicalDamage) {
+      <p>{{ `Dealt ${attack.physicalDamage} points of physical damage.` }}</p>
+    }
+  }
